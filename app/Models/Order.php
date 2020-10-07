@@ -35,4 +35,20 @@ class Order extends Model
     {
         return $this->hasOne(Address::class);
     }
+
+    /**
+     * @return HasOne
+     */
+    public function paymentType()
+    {
+        return $this->hasOne(PaymentType::class);
+    }
+
+    /**
+     * @return HasOne
+     */
+    public function shippingType()
+    {
+        return $this->hasOne(ShippingType::class);
+    }
 }

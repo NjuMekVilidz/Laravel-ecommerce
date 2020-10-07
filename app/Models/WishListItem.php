@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class WishListItem extends Model
 {
@@ -18,4 +19,20 @@ class WishListItem extends Model
         'wishlist_id',
         'product_id',
     ];
+
+    /**
+     * @return BelongsTo
+     */
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function wishlist()
+    {
+        return $this->belongsTo(WishList::class);
+    }
 }
